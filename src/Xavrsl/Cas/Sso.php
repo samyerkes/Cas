@@ -236,4 +236,26 @@ class Sso {
         exit;
     }
 
+    /*
+    * Returns information about the currently logged in user.
+    *
+    * If nobody is currently logged in, this method should return null.
+    *
+    * @return array|null
+    */
+    public function getAttributes() {
+        return $this->remoteUser = phpCAS::getAttributes();
+    }
+
+    /**
+    * Returns information about the currently logged in user.
+    *
+    * If nobody is currently logged in, this method should return null.
+    *
+    * @return array|null
+    */
+    public function getAttribute($key) {
+        return $this->remoteUser = phpCAS::getAttribute($key);
+    }
+
 }
